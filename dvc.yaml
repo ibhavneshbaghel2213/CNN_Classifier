@@ -26,7 +26,7 @@ stages:
   training:
     cmd: python src/deepClassifier/pipeline/training.py
     deps:
-      - src/deepClassifier/pipeline/training.pyy
+      - src/deepClassifier/pipeline/training.py
       - src/deepClassifier/components/prepare_callback.py
       - configs/config.yaml
       - artifacts/data_ingestion/PetImages
