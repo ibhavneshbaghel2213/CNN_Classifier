@@ -1,4 +1,4 @@
-from deepClassifier.config.configuration import ConfigurationManager
+from deepClassifier.config import ConfigurationManager
 from deepClassifier.components.data_ingestion import DataIngestion
 from deepClassifier import logger
 
