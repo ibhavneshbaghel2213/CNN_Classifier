@@ -1,6 +1,6 @@
 from deepClassifier.constants import *
 from deepClassifier.utils import read_yaml, create_directories
-from deepClassifier.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig, PrepareCallBackConfig, TrainingConfig
+from deepClassifier.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig, PrepareCallBackConfig, TrainingConfig, EvaluationConfig
 import os
 
 class ConfigurationManager:
@@ -90,5 +90,15 @@ class ConfigurationManager:
 
         return training_config
 
+    def get_validation_config(self) -> EvaluationConfig:
+        eval_config = EvaluationConfig(
+            path_of_model="artifacts/training/model.h5",
+            training_data="artifacts/data_ingestion/PetImages",
+            mlflow_uri="https://dagshub.com/ibhavneshbaghel2213/CNN_Classifier.mlflow",
+            all_params=self.params,
+            params_image_size=self.params["IMAGE_SIZE"],
+            params_batch_size=self.params["BATCH_SIZE"]
+        )
+        return eval_config
 
     
